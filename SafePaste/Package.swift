@@ -16,13 +16,7 @@ let package = Package(
         .executableTarget(
             name: "SafePaste",
             dependencies: [],
-            path: "Sources",
-            resources: [
-                .process("Resources")
-            ],
-            swiftSettings: [
-                .unsafeFlags(["-parse-as-library"])
-            ]
+            path: "Sources"
         )
     ]
 )
