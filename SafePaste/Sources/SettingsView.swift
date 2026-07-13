@@ -8,7 +8,6 @@ struct SettingsView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            // Header
             HStack {
                 Text("SafePaste")
                     .font(.headline)
@@ -28,10 +27,8 @@ struct SettingsView: View {
             
             Divider()
             
-            // Main content
             ScrollView {
                 VStack(alignment: .leading, spacing: 20) {
-                    // Enable/Disable toggle
                     Section {
                         Toggle("Enable SafePaste", isOn: $settings.isEnabled)
                             .toggleStyle(SwitchToggleStyle())
@@ -46,7 +43,6 @@ struct SettingsView: View {
                     
                     Divider()
                     
-                    // Shortcut configuration
                     Section {
                         VStack(alignment: .leading, spacing: 8) {
                             Text("Paste Shortcut")
@@ -69,7 +65,6 @@ struct SettingsView: View {
                     
                     Divider()
                     
-                    // Rules list
                     Section {
                         HStack {
                             Text("Sanitization Rules")
@@ -89,7 +84,6 @@ struct SettingsView: View {
                             .font(.caption)
                             .foregroundColor(.secondary)
                         
-                        // Rules list
                         LazyVStack(spacing: 8) {
                             ForEach($settings.rules) { $rule in
                                 RuleRow(rule: $rule, onEdit: { selectedRule = rule })
@@ -101,7 +95,6 @@ struct SettingsView: View {
                 .padding(16)
             }
             
-            // Bottom buttons
             Divider()
             
             HStack {
@@ -178,7 +171,6 @@ struct RuleRow: View {
             
             Spacer()
             
-            // Toggle
             Toggle("", isOn: $rule.isEnabled)
                 .toggleStyle(SwitchToggleStyle())
                 .onChange(of: rule.isEnabled) { _ in
@@ -186,7 +178,6 @@ struct RuleRow: View {
                 }
                 .frame(width: 40)
             
-            // Edit button
             Button(action: onEdit) {
                 Image(systemName: "pencil")
                     .foregroundColor(.blue)
@@ -197,11 +188,5 @@ struct RuleRow: View {
         .padding(8)
         .background(Color(.controlBackgroundColor))
         .cornerRadius(8)
-    }
-}
-
-struct SettingsView_Previews: PreviewProvider {
-    static var previews: some View {
-        SettingsView()
     }
 }

@@ -12,10 +12,8 @@ class KeyboardShortcutMonitor {
     }
     
     func startMonitoring() {
-        // Stop any existing monitoring
         stopMonitoring()
         
-        // Create event tap for keyboard events
         let eventMask = (1 << CGEventType.keyDown.rawValue)
         
         guard let tap = CGEvent.tapCreate(
@@ -26,7 +24,7 @@ class KeyboardShortcutMonitor {
             callback: eventTapCallback,
             userInfo: Unmanaged.passUnretained(self).toOpaque()
         ) else {
-            print("Failed to create event tap")
+            print("Failed to create event tap - need Accessibility permissions")
             return
         }
         
@@ -41,7 +39,9 @@ class KeyboardShortcutMonitor {
     func stopMonitoring() {
         if let tap = eventTap {
             CGEvent.tapEnable(tap: tap, enable: false)
-            CFRunLoopRemoveSource(CFRunLoopGetCurrent(), runLoopSource, .commonModes)
+            if let source = runLoopSource {
+                CFRunLoopRemoveSource(CFRunLoopGetCurrent(), source, .commonModes)
+            }
             eventTap = nil
             runLoopSource = nil
         }
@@ -50,61 +50,47 @@ class KeyboardShortcutMonitor {
     @objc private func handleKeyEvent(_ event: CGEvent) {
         guard settings.isEnabled else { return }
         
-        // Check if this is a key down event
         guard event.type == .keyDown else { return }
         
-        // Get the keyboard shortcut from settings
         guard let (key, modifiers) = settings.parseShortcut(settings.pasteShortcut) else { return }
         
-        // Check if the event matches our shortcut
         let eventModifiers = event.flags
         let requiredModifiers = modifiers
         
-        // Check if all required modifiers are present
         if (eventModifiers.rawValue & requiredModifiers.rawValue) != requiredModifiers.rawValue {
             return
         }
         
-        // Check if the key matches
         let keyCode = event.getIntegerValueField(.keyboardEventKeycode)
         let expectedKeyCode = keyCodeForKey(key)
         
         guard keyCode == expectedKeyCode else { return }
         
-        // Check if 'v' key is pressed (for paste)
-        // Also check for 'V' (shift+v)
-        let isVKey = keyCode == 9 || keyCode == 86 // 9 is 'v', 86 is 'V' with shift
+        let isVKey = keyCode == 9 || keyCode == 86
         guard isVKey else { return }
         
-        // Debounce: prevent multiple triggers
         let now = Date()
         guard now.timeIntervalSince(lastPasteTime) > 0.5 else { return }
         lastPasteTime = now
         
-        // Perform safe paste
         performSafePaste()
     }
     
     private func performSafePaste() {
-        // Get current clipboard content
         guard let clipboardString = NSPasteboard.general.string(forType: .string) else {
             NSSound.beep()
             return
         }
         
-        // Sanitize the text
         let sanitizer = TextSanitizer(rules: settings.rules)
         let sanitizedText = sanitizer.sanitizeWithContext(clipboardString)
         
-        // Put sanitized text back to clipboard
         let pasteboard = NSPasteboard.general
         pasteboard.clearContents()
         pasteboard.setString(sanitizedText, forType: .string)
         
-        // Simulate paste command
         simulatePaste()
         
-        // Restore original clipboard after a delay
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             pasteboard.clearContents()
             pasteboard.setString(clipboardString, forType: .string)
@@ -112,28 +98,23 @@ class KeyboardShortcutMonitor {
     }
     
     private func simulatePaste() {
-        // Create a new event tap to inject the paste command
         let eventSource = CGEventSource(stateID: .hidSystemState)
         
-        // Create key down event for Command
         if let cmdDown = CGEvent(keyboardEventSource: eventSource, virtualKey: 55, keyDown: true) {
             cmdDown.flags = .command
             cmdDown.post(tap: .cghidEventTap)
         }
         
-        // Create key down event for V
         if let vDown = CGEvent(keyboardEventSource: eventSource, virtualKey: 9, keyDown: true) {
             vDown.flags = .command
             vDown.post(tap: .cghidEventTap)
         }
         
-        // Create key up event for V
         if let vUp = CGEvent(keyboardEventSource: eventSource, virtualKey: 9, keyDown: false) {
             vUp.flags = .command
             vUp.post(tap: .cghidEventTap)
         }
         
-        // Create key up event for Command
         if let cmdUp = CGEvent(keyboardEventSource: eventSource, virtualKey: 55, keyDown: false) {
             cmdUp.flags = .command
             cmdUp.post(tap: .cghidEventTap)
@@ -210,12 +191,9 @@ class KeyboardShortcutMonitor {
     }
 }
 
-// Event tap callback
 private let eventTapCallback: CGEventTapCallBack = { (proxy, type, event, refcon) in
     guard let refcon = refcon else { return Unmanaged.passRetained(event) }
-    
     let monitor = Unmanaged<KeyboardShortcutMonitor>.fromOpaque(refcon).takeUnretainedValue()
     monitor.handleKeyEvent(event)
-    
     return Unmanaged.passRetained(event)
 }

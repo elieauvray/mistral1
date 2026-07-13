@@ -44,7 +44,6 @@ class Settings: ObservableObject {
                 rules = try decoder.decode([Rule].self, from: data)
             } catch {
                 print("Error loading rules: $error)")
-                // Keep default rules if loading fails
             }
         }
     }

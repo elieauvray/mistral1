@@ -9,7 +9,6 @@ struct RuleEditorView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            // Header
             HStack {
                 Text(rule.id == UUID() ? "Add Rule" : "Edit Rule")
                     .font(.headline)
@@ -28,7 +27,6 @@ struct RuleEditorView: View {
             
             Divider()
             
-            // Form
             Form {
                 Section {
                     TextField("Rule Name", text: $rule.name)
@@ -81,7 +79,6 @@ struct RuleEditorView: View {
             
             Divider()
             
-            // Footer
             HStack {
                 Spacer()
                 
@@ -106,11 +103,5 @@ struct RuleEditorView: View {
     private func testRule() {
         let sanitizer = TextSanitizer(rules: [rule])
         testResult = sanitizer.sanitize(testText)
-    }
-}
-
-struct RuleEditorView_Previews: PreviewProvider {
-    static var previews: some View {
-        RuleEditorView(rule: .constant(Rule(name: "Test", pattern: "test", replacement: "[TEST]")), onDismiss: {})
     }
 }

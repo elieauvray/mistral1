@@ -1,11 +1,12 @@
 import AppKit
-import SwiftUI
+
+// This is the entry point for a Swift Package Manager macOS app
+// It creates the NSApplication and sets up the app delegate
 
 class AppDelegate: NSObject, NSApplicationDelegate {
     var statusItem: NSStatusItem?
     var popover: NSPopover?
     var keyboardMonitor: KeyboardShortcutMonitor?
-    var settingsView: SettingsView?
     
     func applicationDidFinishLaunching(_ notification: Notification) {
         // Create status bar item
@@ -53,9 +54,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         
         let settings = Settings.shared
-        settingsView = SettingsView()
+        let settingsView = SettingsView()
         
-        let hostingView = NSHostingView(rootView: settingsView!)
+        let hostingView = NSHostingView(rootView: settingsView)
         hostingView.frame = NSRect(x: 0, y: 0, width: 400, height: 500)
         
         popover?.contentView = hostingView
@@ -70,3 +71,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         popover?.close()
     }
 }
+
+let app = NSApplication.shared
+let delegate = AppDelegate()
+app.delegate = delegate
+app.run()
