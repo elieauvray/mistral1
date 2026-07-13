@@ -4,12 +4,38 @@
     classes = {
     };
     objects = {
-        08FB77932577480400A7D078 /* SafePaste */ = {
+        01000000 = {
+            isa = PBXProject;
+            attributes = {
+                LastUpgradeCheck = 1500;
+                ORGANIZATIONNAME = "";
+                TargetAttributes = {
+                    01000001 = {
+                        CreatedOnToolsVersion = 15.0;
+                    };
+                };
+            };
+            buildConfigurationList = 01000003;
+            compatibilityVersion = "Xcode 12.0";
+            developmentRegion = English;
+            hasScannedForEncodings = 0;
+            knownRegions = (
+                en,
+            );
+            mainGroup = 01000002;
+            productRefGroup = 01000004;
+            projectDirPath = "";
+            projectRoot = "";
+            targets = (
+                01000001,
+            );
+        };
+        01000001 = {
             isa = PBXNativeTarget;
-            buildConfigurationList = 08FB779A2577480400A7D078 /* Build configuration list for PBXNativeTarget "SafePaste" */;
+            buildConfigurationList = 01000003;
             buildPhases = (
-                08FB77922577480400A7D078 /* Sources */,
-                08FB77942577480400A7D078 /* Resources */,
+                01000005,
+                01000006,
             );
             buildRules = (
             );
@@ -17,333 +43,99 @@
             );
             name = SafePaste;
             productName = SafePaste;
-            productReference = 08FB77952577480400A7D078 /* SafePaste.app */;
+            productReference = 01000007;
             productType = "com.apple.product-type.application";
         };
-        08FB779A2577480400A7D078 /* Build configuration list for PBXNativeTarget "SafePaste" */ = {
+        01000002 = {
+            isa = PBXGroup;
+            children = (
+                01000008,
+                01000009,
+                0100000A,
+            );
+            sourceTree = "<group>";
+        };
+        01000003 = {
             isa = XCConfigurationList;
             buildConfigurations = (
-                08FB779B2577480400A7D078 /* Debug */,
-                08FB779C2577480400A7D078 /* Release */,
+                0100000B,
+                0100000C,
             );
             defaultConfigurationIsValid = YES;
             defaultConfigurationName = Release;
         };
-        08FB779B2577480400A7D078 /* Debug */ = {
-            isa = XCBuildConfiguration;
-            baseConfigurationReference = 08FB77A32577480400A7D078 /* Info.plist */;
-            buildSettings = {
-                ALWAYS_SEARCH_USER_PATHS = NO;
-                CLANG_ANALYZER_NONNULL = YES;
-                CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-                CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-                CLANG_CXX_LIBRARY = "libc++";
-                CLANG_ENABLE_MODULES = YES;
-                CLANG_ENABLE_OBJC_ARC = YES;
-                CLANG_ENABLE_OBJC_WEAK = YES;
-                CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-                CLANG_WARN_BOOL_CONVERSION = YES;
-                CLANG_WARN_COMMA = YES;
-                CLANG_WARN_CONSTANT_CONVERSION = YES;
-                CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-                CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-                CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-                CLANG_WARN_EMPTY_BODY = YES;
-                CLANG_WARN_ENUM_CONVERSION = YES;
-                CLANG_WARN_INFINITE_RECURSION = YES;
-                CLANG_WARN_INT_CONVERSION = YES;
-                CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-                CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-                CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-                CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-                CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-                CLANG_WARN_STRICT_PROTOTYPES = YES;
-                CLANG_WARN_SUSPICIOUS_MOVE = YES;
-                CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-                CLANG_WARN_UNREACHABLE_CODE = YES;
-                CLANG_WARN__DUPLICATE_METHOD = YES;
-                CODE_SIGN_STYLE = Automatic;
-                COPY_PHASE_STRIP = NO;
-                DEBUG_INFORMATION_FORMAT = dwarf-with-dsym;
-                ENABLE_NS_ASSERTIONS = YES;
-                ENABLE_STRICT_OBJC_MSGSEND = YES;
-                ENABLE_TESTABILITY = YES;
-                GCC_C_LANGUAGE_STANDARD = gnu11;
-                GCC_NO_COMMON_BLOCKS = YES;
-                GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-                GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-                GCC_WARN_UNDECLARED_SELECTOR = YES;
-                GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-                GCC_WARN_UNUSED_FUNCTION = YES;
-                GCC_WARN_UNUSED_VARIABLE = YES;
-                MACOSX_DEPLOYMENT_TARGET = 12.0;
-                MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-                MTL_FAST_MATH = YES;
-                ONLY_ACTIVE_ARCH = YES;
-                SDKROOT = macosx;
-                SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-                SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-            };
-            name = Debug;
+        01000004 = {
+            isa = PBXGroup;
+            children = (
+                01000007,
+            );
+            name = Products;
+            sourceTree = "<group>";
         };
-        08FB779C2577480400A7D078 /* Release */ = {
-            isa = XCBuildConfiguration;
-            baseConfigurationReference = 08FB77A32577480400A7D078 /* Info.plist */;
-            buildSettings = {
-                ALWAYS_SEARCH_USER_PATHS = NO;
-                CLANG_ANALYZER_NONNULL = YES;
-                CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-                CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-                CLANG_CXX_LIBRARY = "libc++";
-                CLANG_ENABLE_MODULES = YES;
-                CLANG_ENABLE_OBJC_ARC = YES;
-                CLANG_ENABLE_OBJC_WEAK = YES;
-                CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-                CLANG_WARN_BOOL_CONVERSION = YES;
-                CLANG_WARN_COMMA = YES;
-                CLANG_WARN_CONSTANT_CONVERSION = YES;
-                CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-                CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-                CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-                CLANG_WARN_EMPTY_BODY = YES;
-                CLANG_WARN_ENUM_CONVERSION = YES;
-                CLANG_WARN_INFINITE_RECURSION = YES;
-                CLANG_WARN_INT_CONVERSION = YES;
-                CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-                CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-                CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-                CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-                CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-                CLANG_WARN_STRICT_PROTOTYPES = YES;
-                CLANG_WARN_SUSPICIOUS_MOVE = YES;
-                CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-                CLANG_WARN_UNREACHABLE_CODE = YES;
-                CLANG_WARN__DUPLICATE_METHOD = YES;
-                CODE_SIGN_STYLE = Automatic;
-                COPY_PHASE_STRIP = YES;
-                DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-                ENABLE_NS_ASSERTIONS = NO;
-                ENABLE_STRICT_OBJC_MSGSEND = YES;
-                GCC_C_LANGUAGE_STANDARD = gnu11;
-                GCC_NO_COMMON_BLOCKS = YES;
-                GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-                GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-                GCC_WARN_UNDECLARED_SELECTOR = YES;
-                GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-                GCC_WARN_UNUSED_FUNCTION = YES;
-                GCC_WARN_UNUSED_VARIABLE = YES;
-                MACOSX_DEPLOYMENT_TARGET = 12.0;
-                MTL_ENABLE_DEBUG_INFO = NO;
-                MTL_FAST_MATH = YES;
-                SDKROOT = macosx;
-                SWIFT_OPTIMIZATION_LEVEL = "-O";
-                VALIDATE_PRODUCT = YES;
-            };
-            name = Release;
-        };
-        08FB77922577480400A7D078 /* Sources */ = {
+        01000005 = {
             isa = PBXSourcesBuildPhase;
             buildActionMask = 2147483647;
             files = (
-                08FB77A62577480400A7D078 /* SafePasteApp.swift in Sources */,
-                08FB77A72577480400A7D078 /* AppDelegate.swift in Sources */,
-                08FB77A82577480400A7D078 /* TextSanitizer.swift in Sources */,
-                08FB77A92577480400A7D078 /* KeyboardShortcutMonitor.swift in Sources */,
-                08FB77AA2577480400A7D078 /* Settings.swift in Sources */,
-                08FB77AB2577480400A7D078 /* Rule.swift in Sources */,
-                08FB77AC2577480400A7D078 /* SettingsView.swift in Sources */,
-                08FB77AD2577480400A7D078 /* RuleEditorView.swift in Sources */,
+                0100000D,
+                0100000E,
+                0100000F,
+                01000010,
+                01000011,
+                01000012,
+                01000013,
+                01000014,
             );
             runOnlyForDeploymentPostprocessing = 0;
         };
-        08FB77942577480400A7D078 /* Resources */ = {
+        01000006 = {
             isa = PBXCopyFilesBuildPhase;
             buildActionMask = 2147483647;
             destination = resources;
             destinationSubPath = "";
             files = (
-                08FB77B02577480400A7D078 /* Assets.xcassets in Resources */,
+                01000015,
             );
             runOnlyForDeploymentPostprocessing = 1;
         };
-        08FB77952577480400A7D078 /* SafePaste.app */ = {
+        01000007 = {
             isa = PBXFileReference;
             explicitFileType = wrapper.application;
             includeInIndex = 0;
             path = SafePaste.app;
             sourceTree = BUILT_PRODUCTS_DIR;
         };
-        08FB77A32577480400A7D078 /* Info.plist */ = {
+        01000008 = {
+            isa = PBXGroup;
+            children = (
+                01000016,
+                01000017,
+                01000018,
+                01000019,
+                0100001A,
+                0100001B,
+                0100001C,
+                0100001D,
+            );
+            name = Sources;
+            sourceTree = "<group>";
+        };
+        01000009 = {
+            isa = PBXGroup;
+            children = (
+                0100001E,
+            );
+            name = Resources;
+            sourceTree = "<group>";
+        };
+        0100000A = {
             isa = PBXFileReference;
             lastKnownFileType = text.plist;
             path = Info.plist;
             sourceTree = "<group>";
         };
-        08FB77A42577480400A7D078 /* SafePasteApp.swift */ = {
-            isa = PBXFileReference;
-            lastKnownFileType = sourcecode.swift;
-            path = SafePasteApp.swift;
-            sourceTree = "<group>";
-        };
-        08FB77A52577480400A7D078 /* AppDelegate.swift */ = {
-            isa = PBXFileReference;
-            lastKnownFileType = sourcecode.swift;
-            path = AppDelegate.swift;
-            sourceTree = "<group>";
-        };
-        08FB77A62577480400A7D078 /* SafePasteApp.swift in Sources */ = {
-            isa = PBXBuildFile;
-            fileRef = 08FB77A42577480400A7D078 /* SafePasteApp.swift */;
-        };
-        08FB77A72577480400A7D078 /* AppDelegate.swift in Sources */ = {
-            isa = PBXBuildFile;
-            fileRef = 08FB77A52577480400A7D078 /* AppDelegate.swift */;
-        };
-        08FB77A82577480400A7D078 /* TextSanitizer.swift in Sources */ = {
-            isa = PBXBuildFile;
-            fileRef = 08FB77B12577480400A7D078 /* TextSanitizer.swift */;
-        };
-        08FB77A92577480400A7D078 /* KeyboardShortcutMonitor.swift in Sources */ = {
-            isa = PBXBuildFile;
-            fileRef = 08FB77B22577480400A7D078 /* KeyboardShortcutMonitor.swift */;
-        };
-        08FB77AA2577480400A7D078 /* Settings.swift in Sources */ = {
-            isa = PBXBuildFile;
-            fileRef = 08FB77B32577480400A7D078 /* Settings.swift */;
-        };
-        08FB77AB2577480400A7D078 /* Rule.swift in Sources */ = {
-            isa = PBXBuildFile;
-            fileRef = 08FB77B42577480400A7D078 /* Rule.swift */;
-        };
-        08FB77AC2577480400A7D078 /* SettingsView.swift in Sources */ = {
-            isa = PBXBuildFile;
-            fileRef = 08FB77B52577480400A7D078 /* SettingsView.swift */;
-        };
-        08FB77AD2577480400A7D078 /* RuleEditorView.swift in Sources */ = {
-            isa = PBXBuildFile;
-            fileRef = 08FB77B62577480400A7D078 /* RuleEditorView.swift */;
-        };
-        08FB77B02577480400A7D078 /* Assets.xcassets */ = {
-            isa = PBXFileReference;
-            lastKnownFileType = folder.assetcatalog;
-            path = Assets.xcassets;
-            sourceTree = "<group>";
-        };
-        08FB77B12577480400A7D078 /* TextSanitizer.swift */ = {
-            isa = PBXFileReference;
-            lastKnownFileType = sourcecode.swift;
-            path = TextSanitizer.swift;
-            sourceTree = "<group>";
-        };
-        08FB77B22577480400A7D078 /* KeyboardShortcutMonitor.swift */ = {
-            isa = PBXFileReference;
-            lastKnownFileType = sourcecode.swift;
-            path = KeyboardShortcutMonitor.swift;
-            sourceTree = "<group>";
-        };
-        08FB77B32577480400A7D078 /* Settings.swift */ = {
-            isa = PBXFileReference;
-            lastKnownFileType = sourcecode.swift;
-            path = Settings.swift;
-            sourceTree = "<group>";
-        };
-        08FB77B42577480400A7D078 /* Rule.swift */ = {
-            isa = PBXFileReference;
-            lastKnownFileType = sourcecode.swift;
-            path = Rule.swift;
-            sourceTree = "<group>";
-        };
-        08FB77B52577480400A7D078 /* SettingsView.swift */ = {
-            isa = PBXFileReference;
-            lastKnownFileType = sourcecode.swift;
-            path = SettingsView.swift;
-            sourceTree = "<group>";
-        };
-        08FB77B62577480400A7D078 /* RuleEditorView.swift */ = {
-            isa = PBXFileReference;
-            lastKnownFileType = sourcecode.swift;
-            path = RuleEditorView.swift;
-            sourceTree = "<group>";
-        };
-        08FB77B72577480400A7D078 /* Sources */ = {
-            isa = PBXGroup;
-            children = (
-                08FB77A42577480400A7D078 /* SafePasteApp.swift */,
-                08FB77A52577480400A7D078 /* AppDelegate.swift */,
-                08FB77B12577480400A7D078 /* TextSanitizer.swift */,
-                08FB77B22577480400A7D078 /* KeyboardShortcutMonitor.swift */,
-                08FB77B32577480400A7D078 /* Settings.swift */,
-                08FB77B42577480400A7D078 /* Rule.swift */,
-                08FB77B52577480400A7D078 /* SettingsView.swift */,
-                08FB77B62577480400A7D078 /* RuleEditorView.swift */,
-            );
-            name = Sources;
-            sourceTree = "<group>";
-        };
-        08FB77B82577480400A7D078 /* Resources */ = {
-            isa = PBXGroup;
-            children = (
-                08FB77B02577480400A7D078 /* Assets.xcassets */,
-            );
-            name = Resources;
-            sourceTree = "<group>";
-        };
-        08FB77B92577480400A7D078 /* Products */ = {
-            isa = PBXGroup;
-            children = (
-                08FB77952577480400A7D078 /* SafePaste.app */,
-            );
-            name = Products;
-            sourceTree = "<group>";
-        };
-        08FB77BA2577480400A7D078 /* Project object */ = {
-            isa = PBXProject;
-            attributes = {
-                LastUpgradeCheck = 13300;
-                ORGANIZATIONNAME = "SafePaste";
-                TargetAttributes = {
-                    08FB77932577480400A7D078 = {
-                        CreatedOnToolsVersion = 15.0;
-                    };
-                };
-            };
-            buildConfigurationList = 08FB77BE2577480400A7D078 /* Build configuration list for PBXProject "SafePaste" */;
-            compatibilityVersion = "Xcode 13.0";
-            developmentRegion = English;
-            hasScannedForEncodings = 0;
-            knownRegions = (
-                en,
-            );
-            mainGroup = 08FB77BB2577480400A7D078;
-            productRefGroup = 08FB77B92577480400A7D078 /* Products */;
-            projectDirPath = "";
-            projectRoot = "";
-            targets = (
-                08FB77932577480400A7D078 /* SafePaste */,
-            );
-        };
-        08FB77BB2577480400A7D078 /* SafePaste */ = {
-            isa = PBXGroup;
-            children = (
-                08FB77B72577480400A7D078 /* Sources */,
-                08FB77B82577480400A7D078 /* Resources */,
-                08FB77B92577480400A7D078 /* Products */,
-                08FB77A32577480400A7D078 /* Info.plist */,
-            );
-            sourceTree = "<group>";
-        };
-        08FB77BE2577480400A7D078 /* Build configuration list for PBXProject "SafePaste" */ = {
-            isa = XCConfigurationList;
-            buildConfigurations = (
-                08FB77BF2577480400A7D078 /* Debug */,
-                08FB77C02577480400A7D078 /* Release */,
-            );
-            defaultConfigurationIsValid = YES;
-            defaultConfigurationName = Release;
-        };
-        08FB77BF2577480400A7D078 /* Debug */ = {
+        0100000B = {
             isa = XCBuildConfiguration;
-            baseConfigurationReference = 08FB77A32577480400A7D078 /* Info.plist */;
+            baseConfigurationReference = 0100000A;
             buildSettings = {
                 ALWAYS_SEARCH_USER_PATHS = NO;
                 CLANG_ENABLE_MODULES = YES;
@@ -352,9 +144,9 @@
             };
             name = Debug;
         };
-        08FB77C02577480400A7D078 /* Release */ = {
+        0100000C = {
             isa = XCBuildConfiguration;
-            baseConfigurationReference = 08FB77A32577480400A7D078 /* Info.plist */;
+            baseConfigurationReference = 0100000A;
             buildSettings = {
                 ALWAYS_SEARCH_USER_PATHS = NO;
                 CLANG_ENABLE_MODULES = YES;
@@ -363,6 +155,96 @@
             };
             name = Release;
         };
+        0100000D = {
+            isa = PBXBuildFile;
+            fileRef = 01000016;
+        };
+        0100000E = {
+            isa = PBXBuildFile;
+            fileRef = 01000017;
+        };
+        0100000F = {
+            isa = PBXBuildFile;
+            fileRef = 01000018;
+        };
+        01000010 = {
+            isa = PBXBuildFile;
+            fileRef = 01000019;
+        };
+        01000011 = {
+            isa = PBXBuildFile;
+            fileRef = 0100001A;
+        };
+        01000012 = {
+            isa = PBXBuildFile;
+            fileRef = 0100001B;
+        };
+        01000013 = {
+            isa = PBXBuildFile;
+            fileRef = 0100001C;
+        };
+        01000014 = {
+            isa = PBXBuildFile;
+            fileRef = 0100001D;
+        };
+        01000015 = {
+            isa = PBXBuildFile;
+            fileRef = 0100001E;
+        };
+        01000016 = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            path = SafePasteApp.swift;
+            sourceTree = "<group>";
+        };
+        01000017 = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            path = AppDelegate.swift;
+            sourceTree = "<group>";
+        };
+        01000018 = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            path = TextSanitizer.swift;
+            sourceTree = "<group>";
+        };
+        01000019 = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            path = KeyboardShortcutMonitor.swift;
+            sourceTree = "<group>";
+        };
+        0100001A = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            path = Settings.swift;
+            sourceTree = "<group>";
+        };
+        0100001B = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            path = Rule.swift;
+            sourceTree = "<group>";
+        };
+        0100001C = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            path = SettingsView.swift;
+            sourceTree = "<group>";
+        };
+        0100001D = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            path = RuleEditorView.swift;
+            sourceTree = "<group>";
+        };
+        0100001E = {
+            isa = PBXFileReference;
+            lastKnownFileType = folder.assetcatalog;
+            path = Assets.xcassets;
+            sourceTree = "<group>";
+        };
     };
-    rootObject = 08FB77BA2577480400A7D078 /* Project object */;
+    rootObject = 01000000;
 }
