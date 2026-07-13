@@ -1,7 +1,14 @@
 import AppKit
 
-// This is the entry point for a Swift Package Manager macOS app
-// It creates the NSApplication and sets up the app delegate
+@main
+struct SafePasteApp {
+    static func main() {
+        let app = NSApplication.shared
+        let delegate = AppDelegate()
+        app.delegate = delegate
+        app.run()
+    }
+}
 
 class AppDelegate: NSObject, NSApplicationDelegate {
     var statusItem: NSStatusItem?
@@ -71,8 +78,3 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         popover?.close()
     }
 }
-
-let app = NSApplication.shared
-let delegate = AppDelegate()
-app.delegate = delegate
-app.run()
